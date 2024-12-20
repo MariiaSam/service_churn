@@ -48,34 +48,45 @@
 
 1. **Клонування репозиторію:**
 
+```
 git clone https://github.com/MariiaSam/service_churn.git
-
-`cd service_chur`
+cd service_chur
+```
 
 2. **Налаштування середовища за допомогою Poetry:**
 
 Встановіть залежності проєкту:
 
-` poetry install`
+```
+poetry install
+```
 
 Для активації віртуального середовища необхідно виконати команду:
 
-`poetry shell`
+```
+poetry shell
+```
 
 Щоб додати до проекту залежність, необхідно виконати команду
 
-` poetry add <назва_пакету>`
+```
+poetry add <назва_пакету>
+```
 
 Для підтягування існуючих залежностей:
 
-`poetry install`
+```
+poetry install
+```
 
 # Використання
 
 Запустіть Streamlit-додаток командою:
 
-`streamlit run app.py ()!!!!!`
+```
+streamlit run app.py ()!!!!!
+```
 
 # Docker
 
-**_!!!!!!_**
+`**_!!!!!!_**`
