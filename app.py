@@ -5,7 +5,7 @@ import pandas as pd
 
 # Завантаження моделі та scaler
 model = joblib.load('model/model.joblib')  # Шлях до файлу моделі
-scaler = joblib.load('model/scaler.joblib')  # Шлях до файлу scaler
+scaler = joblib.load('model/scaled.joblib')  # Шлях до файлу scaler
 
 # Функція для обробки вхідних даних
 def preprocess_input(data):
