@@ -1,5 +1,5 @@
 # Используем минимальную версию Python
-FROM python:3.12.7-slim
+FROM python:3.12.8-slim
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
