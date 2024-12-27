@@ -13,7 +13,6 @@ def preprocess_input(data):
     input_data = pd.DataFrame([data])
 
 
-
     # Масштабування числових даних
     numeric_features = ['subscription_age', 'bill_avg', 'reamining_contract', 'service_failure_count', 'download_avg', 'upload_avg', 'download_over_limit']
     input_data[numeric_features] = scaler.transform(input_data[numeric_features])
@@ -111,8 +110,10 @@ def main():
             processed_data = preprocess_input(input_data)
 
             # Передбачення
-            prediction = model.predict(processed_data)
-            probability = model.predict_proba(processed_data)
+
+            prediction = model.predict(processed_data.values)
+            probability = model.predict_proba(processed_data.values)
+
 
             # Вивід результатів
             if prediction[0] == 1:
