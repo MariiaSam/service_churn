@@ -12,6 +12,8 @@ def preprocess_input(data):
     # Перетворення даних у DataFrame
     input_data = pd.DataFrame([data])
 
+
+
     # Масштабування числових даних
     numeric_features = ['subscription_age', 'bill_avg', 'reamining_contract', 'service_failure_count', 'download_avg', 'upload_avg', 'download_over_limit']
     input_data[numeric_features] = scaler.transform(input_data[numeric_features])
@@ -27,6 +29,7 @@ def main():
     # Поля для вводу даних клієнта
     with st.form("client_data_form"):
         st.header("Введіть дані клієнта")
+
         # Поля с подсказками
         subscription_age = st.number_input(
         "Вік підписки (місяців)",
@@ -87,6 +90,7 @@ def main():
         [0, 1],
         help="0 - Ні, 1 - Так."
     )
+
 
         submitted = st.form_submit_button("Передбачити")
 
