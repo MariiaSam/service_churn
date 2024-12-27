@@ -1,26 +1,23 @@
-# Використовуємо офіційний образ Python 3.12 як базовий
-FROM python:3.11.9
+# Используем минимальную версию Python
+FROM python:3.12.7-slim
 
-# Встановлюємо Poetry
-RUN pip install poetry
-
-# Додаємо Poetry до змінної PATH
-ENV PATH="/root/.local/bin:$PATH"
-
-# Встановлюємо робочу директорію всередині контейнера
+# Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копіюємо файл конфігурації проєкту та файл з залежностями у контейнер
-COPY pyproject.toml poetry.lock ./
+# Устанавливаем Poetry
+RUN pip install --no-cache-dir poetry
 
-# Встановлюємо залежності через poetry
-RUN poetry install --no-root
+# Копируем файлы проекта в контейнер
+COPY pyproject.toml poetry.lock /app/
 
-# Копіюємо весь проект у контейнер
-COPY . .
+# Устанавливаем зависимости без разработки (production)
+RUN poetry config virtualenvs.create false && poetry install --no-dev --no-interaction --no-ansi
 
-# Expose the port that the application listens on.
-EXPOSE 8000
+# Копируем оставшиеся файлы проекта
+COPY . /app
 
-# Вказуємо команду за замовчуванням для запуску main.py через poetry
-CMD ["poetry", "streamlit", "run", "python", "app.py"]
+# Открываем порт, на котором работает Streamlit
+EXPOSE 8501
+
+# Команда для запуска приложения
+CMD ["streamlit", "run", "app.py", "--server.address", "0.0.0.0"]
