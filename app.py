@@ -107,8 +107,8 @@ def main():
             processed_data = preprocess_input(input_data)
 
             # Передбачення
-            prediction = model.predict(processed_data)
-            probability = model.predict_proba(processed_data)
+            prediction = model.predict(processed_data.values)
+            probability = model.predict_proba(processed_data.values)
 
             # Вивід результатів
             if prediction[0] == 1:
