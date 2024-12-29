@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  service-churn:
+    image: haroonzh/team-project:latest  # Вкажіть ваш Docker image
+    container_name: service-churn-app
+    ports:
+      - "8501:8501"  # Streamlit зазвичай працює на порту 8501
+    environment:
+      - STREAMLIT_SERVER_PORT=8501  # Уточніть, якщо змінювали порт
+    restart: always
+    networks:
+      - service-network
+
+networks:
+  service-network:
+    driver: bridge
