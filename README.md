@@ -42,7 +42,20 @@
 
 ## Модель
 
-**Найкращі результати показала модель - RandomForestClassifier**
+- В проекті було випробувано такі моделі як : LogisticRegression, RandomForestClassifier та SVM.
+- Для найкращих гіперпараметрів використовувався: GridSearchCV.
+- Найкращою моделлю виявилась модель RandomForestClassifier з результатом:
+  -   precision для 0 - 0.92, для 1 - 0.96
+  -   recall для 0 - 0.95, для 1 - 0.94
+  -   f1-score для 0 - 0.93, для 1 0.95
+  -   accuracy 0.94
+- Найкращі параметри які підібрав GridSearchCV:
+  -   'class_weight': 'balanced'
+  -   'max_depth': None
+  -   'max_features': 'log2'
+  -   'min_samples_leaf': 1
+  -   'min_samples_split': 5
+  -   'n_estimators': 80 
 
 ## Запуск локально
 
