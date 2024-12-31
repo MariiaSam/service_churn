@@ -47,7 +47,7 @@
 - Найкращою моделлю виявилась модель RandomForestClassifier з результатом:
   -   precision для 0 - 0.92, для 1 - 0.96
   -   recall для 0 - 0.95, для 1 - 0.94
-  -   f1-score для 0 - 0.93, для 1 0.95
+  -   f1-score для 0 - 0.93, для 1 - 0.95
   -   accuracy 0.94
 - Найкращі параметри які підібрав GridSearchCV для RandomForestClassifier:
   -   'class_weight': 'balanced'
