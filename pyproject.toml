@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "service-churn"
+name = "service_churn"
 version = "0.1.0"
 description = "Прогнозування Відтоку Клієнтів для Телекомунікаційної компанії"
 authors = ["MariiaSam <kontragent@ukr.net>"]
